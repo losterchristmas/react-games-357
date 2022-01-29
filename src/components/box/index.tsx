@@ -32,14 +32,15 @@ export default function Box(props: IProps) {
 }
 
 const DefaultBoxBtnStyle: CSSProperties = {
-  background: "#F6D67B",
+  background: "#bec2c7",
   height: "100px",
   width: "100px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   cursor: "pointer",
-  margin: "0px 10px 10px 0px ",
+  margin: "0px 10px 10px 0px",
+  borderRadius: "10px",
 };
 
 const DefaultInnerStyle: CSSProperties = {

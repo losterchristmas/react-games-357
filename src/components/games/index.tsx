@@ -1,10 +1,11 @@
 import { Button } from "antd";
+import { url } from "inspector";
 import { CSSProperties, useMemo } from "react";
 import { IBox } from "../../type/types";
 import Line from "../line";
 import Setting from "../setting";
 import { useGameHook } from "./hook";
-
+const background = require("../../images/background.jpg");
 export default function Games() {
   const {
     handleClickChangeCurrentPlayer,
@@ -67,7 +68,6 @@ const DefaultWrapper: CSSProperties = {
 };
 
 const DefaultWrapperInner: CSSProperties = {
-  background: "#d19b40",
   display: "flex",
   flexDirection: "column",
   padding: "10px 0 0 10px",
@@ -90,4 +90,6 @@ const DefaultPageStyle: CSSProperties = {
   flexDirection: "column",
   alignItems: "center",
   height: "100vh",
+  background: `url(${background}) no-repeat`,
+  backgroundSize: "100% 100%",
 };
