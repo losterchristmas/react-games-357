@@ -9,21 +9,22 @@ interface IProps {
 
 export default function Box(props: IProps) {
   const { box, handleClickBox } = props;
-
   const handleClick = () => {
     handleClickBox && handleClickBox(box);
   };
+
+  const currentChessStyle = box.currentPlayer
+    ? box.currentPlayer === "Block"
+      ? BlackChessStyle
+      : WhiteChessStyle
+    : "";
 
   return (
     <div style={DefaultBoxBtnStyle} onClick={handleClick}>
       <div
         style={{
           ...DefaultInnerStyle,
-          background: box.currentPlayer
-            ? box.currentPlayer === "Block"
-              ? "#000"
-              : "#fff"
-            : "",
+          ...currentChessStyle,
         }}
       ></div>
     </div>
@@ -31,14 +32,14 @@ export default function Box(props: IProps) {
 }
 
 const DefaultBoxBtnStyle: CSSProperties = {
-  background: "#f5c066",
+  background: "#F6D67B",
   height: "100px",
   width: "100px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   cursor: "pointer",
-  margin: "10px",
+  margin: "0px 10px 10px 0px ",
 };
 
 const DefaultInnerStyle: CSSProperties = {
@@ -46,4 +47,16 @@ const DefaultInnerStyle: CSSProperties = {
   width: "80px",
   margin: "10px",
   borderRadius: "50%",
+};
+
+const WhiteChessStyle: CSSProperties = {
+  background: "radial-gradient(15px 15px at 15px 15px,#fff,#e3e3e3)",
+  margin: "50px auto",
+  boxShadow: "2px 2px 4px rgba(0,0,0,0.3)",
+};
+
+const BlackChessStyle: CSSProperties = {
+  background: "radial-gradient(10px 10px at 15px 15px,#fff,#333)",
+  margin: "50px auto",
+  boxShadow: "2px 2px 4px rgba(0,0,0,0.4)",
 };

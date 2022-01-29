@@ -67,9 +67,10 @@ const DefaultWrapper: CSSProperties = {
 };
 
 const DefaultWrapperInner: CSSProperties = {
-  background: "#a3721f",
+  background: "#d19b40",
   display: "flex",
   flexDirection: "column",
+  padding: "10px 0 0 10px",
 };
 
 const DefaultTextWrapper: CSSProperties = {
